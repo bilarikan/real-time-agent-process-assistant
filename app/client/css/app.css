@@ -1,20 +1,20 @@
 :root {
-  --ink: #14221b;
-  --muted: #637068;
-  --line: #dce5df;
+  --ink: #1b1a2e;
+  --muted: #66657a;
+  --line: #e0dfec;
   --surface: #ffffff;
-  --surface-soft: #f4f8f5;
-  --brand: #00a376;
-  --brand-dark: #007a58;
-  --brand-pale: #dff7ee;
+  --surface-soft: #f5f5fb;
+  --brand: #4f46e5;
+  --brand-dark: #3730a3;
+  --brand-pale: #e8e7fd;
   --blue-pale: #eaf2ff;
   --warning: #ad6b00;
   --danger: #b42318;
-  --shadow: 0 16px 48px rgb(26 54 39 / 10%);
+  --shadow: 0 16px 48px rgb(30 27 75 / 10%);
   font-family:
     Inter, ui-sans-serif, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
   color: var(--ink);
-  background: #edf3ef;
+  background: #eeeef6;
 }
 
 * {
@@ -26,8 +26,8 @@ body {
   min-height: 100vh;
   margin: 0;
   background:
-    radial-gradient(circle at 8% 0%, rgb(0 163 118 / 12%), transparent 34rem),
-    linear-gradient(180deg, #f8fbf9 0, #edf3ef 36rem);
+    radial-gradient(circle at 8% 0%, rgb(79 70 229 / 12%), transparent 34rem),
+    linear-gradient(180deg, #f9f9fd 0, #eeeef6 36rem);
 }
 
 button,
@@ -40,7 +40,7 @@ button:focus-visible,
 textarea:focus-visible,
 input:focus-visible,
 summary:focus-visible {
-  outline: 3px solid rgb(0 163 118 / 24%);
+  outline: 3px solid rgb(79 70 229 / 24%);
   outline-offset: 2px;
 }
 
@@ -122,12 +122,12 @@ h2 {
   width: 8px;
   height: 8px;
   border-radius: 50%;
-  background: #98a29c;
+  background: #9a99ab;
 }
 
 .status-pill[data-state="live"] .status-dot {
   background: var(--brand);
-  box-shadow: 0 0 0 5px rgb(0 163 118 / 12%);
+  box-shadow: 0 0 0 5px rgb(79 70 229 / 12%);
 }
 
 .status-pill[data-state="error"] .status-dot {
@@ -152,7 +152,7 @@ h2 {
 
 .conversation-card,
 .control-card {
-  border: 1px solid rgb(220 229 223 / 92%);
+  border: 1px solid rgb(224 223 236 / 92%);
   border-radius: 18px;
   background: rgb(255 255 255 / 94%);
   box-shadow: var(--shadow);
@@ -209,7 +209,7 @@ h2 {
       0deg,
       transparent 0,
       transparent 39px,
-      rgb(20 34 27 / 3%) 40px
+      rgb(27 26 46 / 3%) 40px
     );
 }
 
@@ -309,11 +309,11 @@ h2 {
 }
 
 .citation {
-  border: 1px solid #b7ddcf;
+  border: 1px solid #c9c7ee;
   border-radius: 999px;
   padding: 4px 8px;
   color: var(--brand-dark);
-  background: #f2fbf7;
+  background: #f4f3ff;
   font-size: 0.68rem;
   text-decoration: none;
 }
@@ -370,7 +370,7 @@ h2 {
 
 .button.secondary {
   color: var(--ink);
-  background: #e8efea;
+  background: #ebebf4;
 }
 
 .button.screen-check {
@@ -384,7 +384,7 @@ h2 {
   width: 100%;
   margin-top: 10px;
   color: var(--ink);
-  background: #e8efea;
+  background: #ebebf4;
 }
 
 .button.mic-toggle[aria-pressed="true"] {
@@ -400,7 +400,7 @@ h2 {
 
 .control-card {
   padding: 18px;
-  box-shadow: 0 10px 30px rgb(26 54 39 / 7%);
+  box-shadow: 0 10px 30px rgb(30 27 75 / 7%);
 }
 
 .button-row {
@@ -435,7 +435,7 @@ h2 {
   border: 1px solid var(--line);
   border-radius: 11px;
   object-fit: contain;
-  background: #17211c;
+  background: #1c1b2e;
 }
 
 .frame-stats {
