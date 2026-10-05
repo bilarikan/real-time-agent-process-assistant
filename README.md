@@ -1,4 +1,4 @@
-# Real-Time Sales Assistant
+# Real-time process assistant
 
 A local prototype of a real-time, voice-and-screen assistant for sales
 representatives. It listens to a sales call, watches the rep's screen, and
