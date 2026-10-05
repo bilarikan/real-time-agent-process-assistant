@@ -1,0 +1,169 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="color-scheme" content="light" />
+    <title>Real-Time Sales Assistant</title>
+    <link rel="stylesheet" href="/static/css/app.css" />
+  </head>
+  <body>
+    <main class="app-shell">
+      <header class="topbar">
+        <div>
+          <p class="eyebrow">Sales Process Assistant</p>
+          <h1>Live sales assistant</h1>
+        </div>
+        <div class="session-strip" aria-label="Session status">
+          <span id="connectionStatus" class="status-pill" data-state="idle">
+            <span class="status-dot"></span>
+            <span>Ready to start</span>
+          </span>
+          <span><strong id="elapsedTime">00:00</strong> elapsed</span>
+          <span><strong id="tokenCount">0</strong> tokens</span>
+          <span><strong id="costEstimate">$0.0000</strong> estimated</span>
+          <span><strong id="reconnectCount">0</strong> reconnects</span>
+        </div>
+      </header>
+
+      <section class="notice" role="note">
+        Prototype only. Use simulated customer data. Audio and shared-screen
+        frames are processed in <strong>us-east1</strong>.
+      </section>
+
+      <section class="workspace">
+        <section class="conversation-card">
+          <div class="card-heading">
+            <div>
+              <p class="eyebrow">Private guidance</p>
+              <h2>Call transcript</h2>
+            </div>
+            <label class="voice-toggle">
+              <input id="voiceOutput" type="checkbox" />
+              <span>Voice output</span>
+              <small>Generated either way</small>
+            </label>
+          </div>
+
+          <div
+            id="transcript"
+            class="transcript"
+            role="log"
+            aria-live="polite"
+            aria-label="Live transcript"
+          >
+            <div class="empty-state">
+              <h3>Silent by default</h3>
+              <p>
+                Start a session, then type or say “Assistant” before a request.
+                Shared-microphone speech is intentionally labelled Call audio.
+                Turn the microphone off at any time to work by typing only.
+              </p>
+            </div>
+          </div>
+
+          <form id="chatForm" class="chat-form">
+            <label class="sr-only" for="chatInput">Message the assistant</label>
+            <textarea
+              id="chatInput"
+              rows="2"
+              maxlength="4000"
+              placeholder="Ask privately without speaking over the customer…"
+              disabled
+            ></textarea>
+            <button id="sendButton" class="button primary" type="submit" disabled>
+              Send
+            </button>
+          </form>
+        </section>
+
+        <aside class="control-column">
+          <section class="control-card hero-controls">
+            <div class="button-row">
+              <button id="startButton" class="button primary" type="button">
+                Start session
+              </button>
+              <button id="stopButton" class="button secondary" type="button" disabled>
+                Stop
+              </button>
+            </div>
+            <button
+              id="micButton"
+              class="button mic-toggle"
+              type="button"
+              aria-pressed="false"
+              disabled
+            >
+              Microphone off — turn on
+            </button>
+            <button id="screenCheckButton" class="button screen-check" type="button" disabled>
+              Check my screen
+            </button>
+            <p id="activityStatus" class="activity-status">Microphone and screen are off.</p>
+          </section>
+
+          <section class="control-card">
+            <div class="card-heading compact">
+              <div>
+                <p class="eyebrow">Vision input</p>
+                <h2>Shared screen</h2>
+              </div>
+              <span id="screenStatus" class="mini-status">Off</span>
+            </div>
+            <video id="screenPreview" autoplay muted playsinline></video>
+            <div class="frame-stats">
+              <span><strong id="framesSent">0</strong> sent</span>
+              <span><strong id="framesCaptured">0</strong> sampled</span>
+              <span><strong id="frameSavings">0%</strong> saved</span>
+            </div>
+          </section>
+
+          <details class="control-card settings-card">
+            <summary>Demo settings</summary>
+            <div class="settings-grid">
+              <label>
+                <span>Microphone on start</span>
+                <input id="micEnabled" type="checkbox" checked />
+              </label>
+              <label>
+                <span>Share screen on start</span>
+                <input id="screenEnabled" type="checkbox" checked />
+              </label>
+              <label>
+                <span>Change threshold</span>
+                <span class="inline-input">
+                  <input id="changeThreshold" type="number" min="0.5" max="25" step="0.5" />
+                  <span>%</span>
+                </span>
+              </label>
+              <label>
+                <span>Frame heartbeat</span>
+                <span class="inline-input">
+                  <input id="frameHeartbeat" type="number" min="3" max="60" step="1" />
+                  <span>s</span>
+                </span>
+              </label>
+              <label>
+                <span>Show tool activity</span>
+                <input id="showToolCalls" type="checkbox" checked />
+              </label>
+            </div>
+          </details>
+        </aside>
+      </section>
+    </main>
+
+    <template id="messageTemplate">
+      <article class="message">
+        <div class="message-meta">
+          <span class="message-author"></span>
+          <time></time>
+        </div>
+        <div class="message-body"></div>
+        <div class="citation-list"></div>
+      </article>
+    </template>
+
+    <script type="module" src="/static/js/main.js"></script>
+  </body>
+</html>

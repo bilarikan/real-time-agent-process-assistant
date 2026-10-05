@@ -1,0 +1,11 @@
+# Keep text files LF on every checkout so macOS and Windows copies behave the
+# same, and never let Git touch the binary source documents.
+* text=auto eol=lf
+*.docx binary
+*.pdf binary
+*.xlsx binary
+*.xlsm binary
+*.png binary
+*.jpg binary
+*.jpeg binary
+*.mp4 binary

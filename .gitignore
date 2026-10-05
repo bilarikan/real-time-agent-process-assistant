@@ -1,0 +1,73 @@
+# macOS
+.DS_Store
+.AppleDouble
+.LSOverride
+
+# Office lock files (created when opening source documents)
+~$*
+.~lock.*
+
+# Secrets — .env.example is tracked, .env is not
+.env
+.env.local
+
+# Python
+.venv/
+venv/
+__pycache__/
+*.py[cod]
+*.egg-info/
+.pytest_cache/
+.ruff_cache/
+
+# ADK local session store
+.adk/
+*.session.db
+
+# Live session captures — audio, video and transcripts must never be committed
+captures/
+*.wav
+*.webm
+
+# Agent tooling
+.claude/
+CLAUDE.md
+AGENTS.md
+
+# More secrets and credentials
+.env.*
+!.env.example
+*.pem
+*.key
+*.p12
+*.pfx
+*.crt
+credentials.json
+service-account*.json
+application_default_credentials.json
+client_secret*.json
+.gcloud/
+.config/gcloud/
+
+# Local data and logs
+*.log
+*.sqlite
+*.sqlite3
+*.db
+
+# Node
+node_modules/
+
+# Editors, build output, coverage
+.vscode/
+.idea/
+*.swp
+dist/
+build/
+.coverage
+htmlcov/
+.mypy_cache/
+
+# Proprietary source documents: keep them out of this public repo
+grounding/*
+!grounding/README.md
